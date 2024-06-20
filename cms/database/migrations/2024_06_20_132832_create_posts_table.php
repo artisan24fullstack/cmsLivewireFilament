@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('body');
-            $table->timestamp('pusblished_at')->nullable();
+            $table->timestamp('published_at')->nullable();
             $table->boolean('featured')->default(false);
             $table->softDeletes();
             $table->timestamps();
