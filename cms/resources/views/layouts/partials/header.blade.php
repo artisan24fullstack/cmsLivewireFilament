@@ -12,34 +12,6 @@
                     </a>
                 </li>
 
-                <li>
-                    <a class="flex space-x-2 items-center hover:text-yellow-500 text-sm text-gray-500"
-                        href="http://127.0.0.1:8000/blog">
-                        Blog
-                    </a>
-                </li>
-
-                <li>
-                    <a class="flex space-x-2 items-center hover:text-yellow-500 text-sm text-gray-500"
-                        href="http://127.0.0.1:8000/blog">
-                        About Us
-                    </a>
-                </li>
-
-                <li>
-                    <a class="flex space-x-2 items-center hover:text-yellow-500 text-sm text-gray-500"
-                        href="http://127.0.0.1:8000/blog">
-                        Contact Us
-                    </a>
-                </li>
-
-                <li>
-                    <a class="flex space-x-2 items-center hover:text-yellow-500 text-sm text-gray-500"
-                        href="http://127.0.0.1:8000/blog">
-                        Terms
-                    </a>
-                </li>
-
             </ul>
         </div>
     </div>
