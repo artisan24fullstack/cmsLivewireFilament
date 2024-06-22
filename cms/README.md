@@ -21,4 +21,8 @@ php artisan make:component Posts/PostCard --view
 
 php artisan livewire:publish --assets
 
- php artisan storage:link (already exists)
+php artisan storage:link (already exists)
+
+php artisan make:component Posts/postItem --view
+
+php artisan livewire:make PostList
