@@ -20,3 +20,5 @@ php artisan make:controller HomeController -i (invoke)
 php artisan make:component Posts/PostCard --view
 
 php artisan livewire:publish --assets
+
+ php artisan storage:link (already exists)
