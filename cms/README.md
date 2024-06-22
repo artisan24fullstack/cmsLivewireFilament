@@ -13,3 +13,10 @@ php artisan make:model Category -m -f
 php artisan make:migration create_category_post_table
 
 php artisan migrate:refresh --seed
+
+
+php artisan make:controller HomeController -i (invoke)
+
+php artisan make:component Posts/PostCard --view
+
+php artisan livewire:publish --assets
