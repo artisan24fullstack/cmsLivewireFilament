@@ -26,3 +26,5 @@ php artisan storage:link (already exists)
 php artisan make:component Posts/postItem --view
 
 php artisan livewire:make PostList
+
+php artisan livewire:make SearchBox

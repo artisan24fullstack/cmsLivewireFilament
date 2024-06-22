@@ -3,10 +3,11 @@
 namespace App\Livewire;
 
 use App\Models\Post;
-use Livewire\Attributes\Computed;
-use Livewire\Attributes\Url;
 use Livewire\Component;
+use Livewire\Attributes\On;
+use Livewire\Attributes\Url;
 use Livewire\WithPagination;
+use Livewire\Attributes\Computed;
 
 class PostList extends Component
 {
@@ -14,16 +15,29 @@ class PostList extends Component
 
     // blog?pages=1&sort=asc or blog?pages=1&sort=desc
     #[Url()]
-    public $sort = "desc";
-
+    public $sort = 'desc';
+    #[Url()]
+    public $search = '';
 
     public function setSort($sort){
         return $this->sort = ($sort === 'desc') ? 'desc' : 'asc';
     }
 
+    // https://livewire.laravel.com/docs/lifecycle-hooks
+    #[On('search')]
+    public function updateSearch($search)
+    {
+        $this->search = $search;
+        //dd('search');
+
+    }
+
     #[Computed]
     public function posts(){
-        return Post::published()->orderBy('published_at', $this->sort)->paginate(3);
+        return Post::published()
+        ->orderBy('published_at', $this->sort)
+        ->where('title', 'like', "%{$this->search}%")
+        ->paginate(5);
     }
     public function render()
     {
