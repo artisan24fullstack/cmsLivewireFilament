@@ -28,3 +28,7 @@ php artisan make:component Posts/postItem --view
 php artisan livewire:make PostList
 
 php artisan livewire:make SearchBox
+
+php artisan make:filament-resource Category
+
+php artisan make:filament-resource Post --soft-deletes
