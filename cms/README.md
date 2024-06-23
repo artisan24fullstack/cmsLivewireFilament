@@ -32,3 +32,5 @@ php artisan livewire:make SearchBox
 php artisan make:filament-resource Category
 
 php artisan make:filament-resource Post --soft-deletes
+
+php artisan make:component Badge --view 
