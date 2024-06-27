@@ -46,3 +46,7 @@ npm i concurrently -g
 php artisan make:migration create_post_like_table
 
 php artisan livewire:make LikeButton
+
+php artisan make:component posts/categoryBadge --view
+
+php artisan make:component posts/author --view
