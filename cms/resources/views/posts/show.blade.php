@@ -43,15 +43,18 @@
             </div>
         </div>
 
-        <div class="article-content py-3 text-gray-800 text-lg text-justify">
+        <div class="prose article-content py-3 text-gray-800 text-lg text-justify">
             {!! $post->body!!}
         </div>
 
         <div class="flex items-center space-x-4 mt-10">
-            <a href="#" class="bg-blue-400 text-white rounded-xl px-3 py-1 text-base">
-                Tailwind</a>
-            <a href="#" class="bg-red-400 text-white rounded-xl px-3 py-1 text-base">
-                Laravel</a>
+            @foreach($post->categories as $category)
+                <x-badge
+                wire:navigate href="{{route('posts.index', ['category' => $category->title])}}"
+                >
+                    {{$category->title}}
+                </x-badge>
+            @endforeach
         </div>
 
         <div class="mt-10 comments-box border-t border-gray-100 pt-10">
