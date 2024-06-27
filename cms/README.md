@@ -37,6 +37,12 @@ php artisan make:component Badge --view
 
 
 npm i concurrently -g
-concurrently "php artisan serve" "npm run dev"
 
-(update scripts package json)"start": "concurrently  \"php artisan config:cache\" \"php artisan serve\" \"npm run dev \"  "
+(update scripts package json)
+
+"start": "concurrently  \"php artisan config:cache\" \"php artisan serve\" \"npm run dev \"  "
+
+
+php artisan make:migration create_post_like_table
+
+php artisan livewire:make LikeButton
