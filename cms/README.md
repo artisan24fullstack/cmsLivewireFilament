@@ -50,3 +50,7 @@ php artisan livewire:make LikeButton
 php artisan make:component posts/categoryBadge --view
 
 php artisan make:component posts/author --view
+
+php artisan livewire:make PostComments
+
+php artisan make:model Comment -m 
