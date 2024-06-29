@@ -60,3 +60,7 @@ php artisan make:migration add_role_to_users
 php artisan make:filament-resource User --generate
 
 php artisan make:policy UserPolicy --model=User
+
+php artisan make:policy PostPolicy --model=Post
+
+php artisan make:policy CategoryPolicy --model=Category
