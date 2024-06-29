@@ -4,16 +4,31 @@ namespace App\Livewire;
 
 use App\Models\Post;
 use Livewire\Attributes\Computed;
+use Livewire\Attributes\Rule;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class PostComments extends Component
 {
-    public Post $post;
+    use WithPagination;
 
+    public Post $post;
+    #[Rule('required|min:3|max:200')]
     public string $comment;
 
     public function postComment(){
-        //dd('hi');
+
+        if(auth()->guest()){
+            return ;
+        }
+        $this->validateOnly('comment');
+
+        $this->post->comments()->create([
+            'comment'=> $this->comment,
+            'user_id'=> auth()->id()
+        ]);
+
+        $this->reset('comment');
     }
 
     #[Computed()]
