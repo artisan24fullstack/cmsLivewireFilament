@@ -58,3 +58,5 @@ php artisan make:model Comment -m
 php artisan make:migration add_role_to_users
 
 php artisan make:filament-resource User --generate
+
+php artisan make:policy UserPolicy --model=User
