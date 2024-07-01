@@ -74,5 +74,6 @@ php artisan make:filament-relation-manager
 
 php artisan make:filament-relation-manager PostResource comments comment
 
+Eager Loading (with) HomeController PostList PostComments
 
-
+php artisan cache:clear
