@@ -82,4 +82,11 @@ php artisan make:filament-widget UserStatsWidget --stats-overview
 UserResource
 Admin Panel
 
+php artisan make:filament-widget PostPerMonthChart --chart
+PostResource
+Admin
+Line Chart
+
+
+
 
