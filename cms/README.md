@@ -65,3 +65,11 @@ php artisan make:policy PostPolicy --model=Post
 
 php artisan make:policy CategoryPolicy --model=Category
 
+php artisan make:filament-resource Comment
+
+php artisan make:filament-relation-manager
+(resource) PostResource 
+(relationship) comments
+(attribute) comment 
+
+php artisan make:filament-relation-manager PostResource comments comment
