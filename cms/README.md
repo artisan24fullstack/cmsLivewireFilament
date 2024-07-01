@@ -64,3 +64,4 @@ php artisan make:policy UserPolicy --model=User
 php artisan make:policy PostPolicy --model=Post
 
 php artisan make:policy CategoryPolicy --model=Category
+
