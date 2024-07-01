@@ -33,7 +33,16 @@ class PostComments extends Component
 
     #[Computed()]
     public function comments(){
-        return $this?->post->comments()->latest()->paginate(5);
+
+        /**
+         * select * from "users" where "users"."id" = 102 limit 1
+         * select * from "users" where "users"."id" = 2 limit 1
+         * select * from "users" where "users"."id" = 101 limit 1
+         * select * from "users" where "users"."id" = 101 limit 1
+         *
+         * select * from "users" where "users"."id" in (2, 101, 102)
+         */
+        return $this?->post->comments()->with('user')->latest()->paginate(5);
     }
 
     public function render()

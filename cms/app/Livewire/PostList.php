@@ -47,7 +47,23 @@ class PostList extends Component
     #[Computed]
     public function posts()
     {
+        /**
+         * select * from "users" where "users"."id" = 81 limit 1
+         * select * from "users" where "users"."id" = 86 limit 1
+         *
+         * select "categories".*, "category_post"."post_id" as "pivot_post_id", "category_post"."category_id" as "pivot_category_id" from "categories"
+         * inner join "category_post" on "categories"."id" = "category_post"."category_id" where "category_post"."post_id" = 90
+         * select "categories".*, "category_post"."post_id" as "pivot_post_id", "category_post"."category_id" as "pivot_category_id" from "categories"
+         * inner join "category_post" on "categories"."id" = "category_post"."category_id" where "category_post"."post_id" = 81
+
+         * select * from "users" where "users"."id" in (36, 81, 86, 90, 97)
+         *
+         * select "categories".*, "category_post"."post_id" as "pivot_post_id", "category_post"."category_id" as "pivot_category_id"
+         * from "categories" inner join "category_post" on "categories"."id" = "category_post"."category_id"
+         * where "category_post"."post_id" in (1, 81, 86, 90, 97)
+         */
         return Post::published()
+        ->with('author', 'categories')
         ->when($this->activeCategory, function ($query) {
             $query->withCategory($this->category);
         })
@@ -61,6 +77,15 @@ class PostList extends Component
 
     #[Computed]
     public function activeCategory(){
+
+        /**
+         * (mulitiple) select * from "categories" where "slug" = '' limit 1
+         */
+
+        if ($this->category === null || $this->category === '') {
+            return null;
+        }
+
         return Category::where("slug", $this->category)->first();
     }
     public function render()

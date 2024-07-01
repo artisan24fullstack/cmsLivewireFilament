@@ -73,3 +73,6 @@ php artisan make:filament-relation-manager
 (attribute) comment 
 
 php artisan make:filament-relation-manager PostResource comments comment
+
+
+
