@@ -87,6 +87,14 @@ PostResource
 Admin
 Line Chart
 
+composer require flowframe/laravel-trend
+
+php artisan make:filament-widget LatestComments --table
+
+CommentResource
+admin panel
+
+
 
 
 
