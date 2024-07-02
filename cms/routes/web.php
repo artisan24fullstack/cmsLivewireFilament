@@ -22,8 +22,9 @@ Route::get('/blog/{post:slug}', [PostController::class, 'show'])->name('posts.sh
 
 Route::get('/language/{locale}', function ($locale) {
 
-    session()->put('locale', $locale);
-
+    if (array_key_exists($locale, config('app.supported_locales'))) {
+        session()->put('locale', $locale);
+    }
     return redirect()->back();
 
 })->name('locale');

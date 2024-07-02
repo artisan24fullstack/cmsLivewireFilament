@@ -101,6 +101,7 @@ composer require outhebox/blade-flags
 
 php artisan make:middleware SetLocale
 
+Laravel Dynamic Components
 
 
 
