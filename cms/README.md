@@ -97,7 +97,9 @@ admin panel
 Translation
 php artisan lang:publish
 
+composer require outhebox/blade-flags
 
+php artisan make:middleware SetLocale
 
 
 
