@@ -89,7 +89,7 @@ Line Chart
 
 composer require flowframe/laravel-trend
 
-php artisan make:filament-widget LatestComments --table
+php artisan make:filament-widget LatestCommentsWidget --table
 
 CommentResource
 admin panel
