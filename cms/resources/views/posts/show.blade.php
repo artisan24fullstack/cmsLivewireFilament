@@ -8,7 +8,7 @@
         <div class="mt-2 flex justify-between items-center">
             <div class="flex py-5 text-base items-center">
                 <x-posts.author :author="$post->author" size="md" />
-                <span class="text-gray-500 text-sm">| {{$post->getReadingTime()}} min read</span>
+                <span class="text-gray-500 text-sm">| {{$post->getReadingTime()}} {{ __('show.min_read') }}</span>
             </div>
             <div class="flex items-center">
                 <span class="text-gray-500 mr-2">{{$post->published_at->diffForHumans()}}</span>

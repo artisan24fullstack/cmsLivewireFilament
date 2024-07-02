@@ -94,6 +94,10 @@ php artisan make:filament-widget LatestCommentsWidget --table
 CommentResource
 admin panel
 
+Translation
+php artisan lang:publish
+
+
 
 
 
