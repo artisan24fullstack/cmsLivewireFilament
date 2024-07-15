@@ -8,7 +8,7 @@ Build a blog from scratch using livewire 3 and filament 3.
 
 **Client:** 
 
-Tailwind.css - Alpine.js - Blade 
+Tailwind.css - Alpine.js 
 
 **Server:** 
 
